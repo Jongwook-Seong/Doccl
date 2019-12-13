@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html id='whole'>
+<head>
+<title>DOCCL</title>
+</head>
+<body>
+  <div align="left">
+		<!--<p>
+			<div style="display:inline;"><a href="/">DOCCL</a></div>
+		</p>-->
+	</div>
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+	<!--<form action="/view" style="margin:0 auto; width:500px;" method="post">
+		<input type="text" name="searchform" id="searchform" style="width:400px;"> <input type="submit" id="searchButton" value="Search">
+	</form>-->
+  {% block document %}{% endblock %}
+
+  <!--<script>
+    document.querySelector('#searchButton').addEventListener('click', function(event){
+      var xhr = new XMLHttpRequest();
+      xhr.open('POST', location.pathname);
+      var x = document.getElementById("whole");
+      xhr.onreadystatechange = function(){
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          if (xhr.status === 200)
+            window.location = xhr.responseURL;
+          } else {
+            alert('Request has some problem.');
+          }
+        }
+      }
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      var y = document.getElementById("searchform").value;
+      var data = { query: y };
+      xhr.send(Object.keys(data).map(key => `${key}=${data[key]}`).join('&'));
+    });
+  </script>-->
+</body>
+</html>
