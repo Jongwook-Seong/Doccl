@@ -10,9 +10,3 @@ def extText(path, filename):
                                                     .replace('\n', ' ')\
                                                     .replace('\x0c', ' ')
     return repl_extracted_text
-
-#filepath = '/home/sjw/Documents/Capstone2/pdf list/'
-#filename = 'Oliveira_Fast_CNN-Based_Document_ICCV_2017_paper.pdf'
-#text = extText(filepath, filename)
-#sentences = [sentence + '.' for sentence in text.split('.') if 'layout' in sentence]
-#print(sentences[0] + ' ... ' + sentences[1] + ' ...')

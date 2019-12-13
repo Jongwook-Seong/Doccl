@@ -42,8 +42,6 @@ def readDocumentVector(docId):
 
 
 def analyzeQuery(query, numofDocs, termTable):
-	#global termTable
-	#dupQterms = query.split(' ')
 	tokens = word_tokenize(query)
 	tags = nltk.pos_tag(tokens)
 	nounsDupQterms = [tag[0] for tag in tags if tag[1] in ['NN', 'NNP']]
@@ -67,7 +65,6 @@ def analyzeQuery(query, numofDocs, termTable):
 
 
 def calcSimilarity(qterms, qtermWeight, termTable, postingFileList):
-	#global termTable, postingFileList
 	docList = []
 	similarityOfDoc = {}
 
@@ -112,14 +109,6 @@ def searchDocuments(qterms, qtermWeight, docNameList, termTable, postingFileList
 		docId = docInfo[0]
 		sortedSearchDocNameList.append(docNameList[docId-1])
 
-	"""
-	# print searched document
-	for i in range(20):
-		docId, weight = sortedSimOfDocList[i]
-		ithResult = str(i) + '. ' + docNameList[docId-1]\
-		 			+ ' (docId: ' + str(docId) + ', weight: ' + str(weight) + ')'
-		print(ithResult)
-	"""
 	return sortedSearchDocNameList
 
 
